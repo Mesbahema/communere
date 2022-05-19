@@ -1,6 +1,5 @@
-
-import './App.css';
-import  StyledButton , { FancyButton } from './components/base/Button/Button';
+import './App.css'
+import FormikContainer from './components/base/form/FormikContainer';
 
 
 
@@ -9,17 +8,7 @@ import  StyledButton , { FancyButton } from './components/base/Button/Button';
 function App() {
   return (
     <div className="App">
-      <StyledButton>Button</StyledButton>
-      <div>
-        <br />
-      </div>
-      <StyledButton variant="outlined">Button</StyledButton>
-      <div>
-        <br />
-      </div>
-      <FancyButton>
-        FancyButton
-      </FancyButton>
+      <FormikContainer />
     </div>
   );
 }
