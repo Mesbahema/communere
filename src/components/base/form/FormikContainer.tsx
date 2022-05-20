@@ -17,11 +17,13 @@ const FormikContainer = () => {
     const initialValues = {
         location_name: '',
         location_type: '',
+        radio_options: ''
     }
 
     const validationSchema = Yup.object({
         location_name: Yup.string().required('Location name is required'),
         location_type: Yup.string().required('Location type is required'),
+        radio_options: Yup.string().required('Radio options is required'),
     })
 
     const onSubmit = (values: typeof initialValues) => {
@@ -51,6 +53,13 @@ const FormikContainer = () => {
                             type="text"
                             label='Location Type'
                             name='location_type'
+                            options={locationTypeOptions}
+                        />
+                        <FormikControl
+                            control="radio"
+                            type="text"
+                            label='Radio options'
+                            name='radio_options'
                             options={locationTypeOptions}
                         />
                         <button type='submit'>Submit</button>
