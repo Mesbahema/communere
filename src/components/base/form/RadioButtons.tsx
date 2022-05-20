@@ -6,14 +6,12 @@ import TextErrorComponent from "./TextErrorComponent"
 type InputPrpsType = {
     label: string,
     name: string,
-    type: string,
     options?: { key: string, value: string }[]
 }
 
 const RadioButtons = ({
     label,
     name,
-    type,
     options
 }: InputPrpsType) => {
     return (

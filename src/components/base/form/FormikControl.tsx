@@ -1,21 +1,21 @@
-import React from 'react'
 import Input from './Input'
+import MapInput from './MapInput'
 import RadioButtons from './RadioButtons'
 import Select from './Select'
 
 
 type FormikControlPropsType = {
-    control: 'input' | 'textarea' | 'select' | 'radio' | 'checkbox' | 'date',
+    control: 'input' | 'textarea' | 'select' | 'radio' | 'checkbox' | 'date' | 'map',
     label: string,
     name: string,
-    type: string,
     options?: { key: string, value: string }[]
 }
-const FormikControl = ({control, name, label, type, options} : FormikControlPropsType) => {
+const FormikControl = ({control, name, label, options} : FormikControlPropsType) => {
   switch(control) {
-      case('input'): return <Input name={name} label={label} type={type}/>
-      case('select'): return <Select name={name} label={label} type={type} options={options}/>
-      case('radio'): return <RadioButtons name={name} label={label} type={type} options={options}/>
+      case('input'): return <Input name={name} label={label}/>
+      case('select'): return <Select name={name} label={label} options={options}/>
+      case('radio'): return <RadioButtons name={name} label={label} options={options}/>
+      case('map'): return <MapInput name={name} label={label}/>
       default: return null
   }
 }

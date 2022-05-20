@@ -5,12 +5,11 @@ import TextErrorComponent from "./TextErrorComponent"
 type InputPrpsType = {
     label: string,
     name: string,
-    type: string
 }
 const Input = ({
     label,
     name,
-    type
+
 }: InputPrpsType) => {
   return (
     <FormControl>
