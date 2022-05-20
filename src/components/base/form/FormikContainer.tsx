@@ -18,21 +18,20 @@ const FormikContainer = () => {
         location_name: '',
         location_type: '',
         radio_options: '',
-        location_on_map: ''
+        location_on_map: '',
+        logo: ''
     }
 
     const validationSchema = Yup.object({
         location_name: Yup.string().required('Location name is required'),
         location_type: Yup.string().required('Location type is required'),
         radio_options: Yup.string().required('Radio options is required'),
-        location_on_map: Yup.array().required('Location on map is required')
+        location_on_map: Yup.array().required('Location on map is required'),
     })
 
     const onSubmit = (values: typeof initialValues) => {
         console.log('submitted', values)
     }
-
-
 
     return (
         <Formik
@@ -41,7 +40,6 @@ const FormikContainer = () => {
             onSubmit={onSubmit}
         >
             {formik => {
-                // console.log('formik', formik.values)
                 return (
                     <Form>
                         <FormikControl
@@ -65,6 +63,12 @@ const FormikContainer = () => {
                             control="radio"
                             label='Radio Options:'
                             name='radio_options'
+                            options={locationTypeOptions}
+                        />
+                        <FormikControl
+                            control="file"
+                            label='Logo:'
+                            name='logo'
                             options={locationTypeOptions}
                         />
 
