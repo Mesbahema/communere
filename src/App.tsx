@@ -1,15 +1,16 @@
-import './App.css'
-import FormikContainer from './components/base/form/FormikContainer';
+import styled from 'styled-components';
+import FormikContainer from './components/FormikContainer';
 
-
-
-
+const MainLayout = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+});
 
 function App() {
   return (
-    <div className="App">
+    <MainLayout>
       <FormikContainer />
-    </div>
+    </MainLayout>
   );
 }
 

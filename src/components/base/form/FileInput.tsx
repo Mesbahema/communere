@@ -1,4 +1,5 @@
-import { ErrorMessage, Field } from "formik"
+import { ErrorMessage, useField } from "formik"
+
 import { FormControl, Label } from "./styled"
 import TextErrorComponent from "./TextErrorComponent"
 
@@ -16,10 +17,21 @@ const FileInput = ({
             <Label htmlFor={name}>
                 {label}
             </Label>
-            <Field id={name} name={name} />
+                <FileInputComponent name={name}/>
             <ErrorMessage name={name} component={TextErrorComponent} />
 
         </FormControl>
+    )
+}
+
+const FileInputComponent = ({ name }: {
+    name: string,
+}) => {
+    const [field, meta] = useField(name);
+    return (
+        <div>
+            <input type="file" id="address" {...field}/>
+        </div>
     )
 }
 

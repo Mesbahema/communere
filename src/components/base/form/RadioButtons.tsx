@@ -26,7 +26,6 @@ const RadioButtons = ({
                     meta: FieldMetaProps<FormikValues>
                 }) => {
                     const { field, form, meta } = props
-                    // console.log('form', form)
                     return options?.map(option => (
                         <Fragment key={option.value}>
                             <input
@@ -34,7 +33,6 @@ const RadioButtons = ({
                                 id={option.value}
                                 {...field}
                                 value={option.value}
-                                // onChange={() => form.setValues({...form.values, [name]: option.value})}
                                 checked={field.value === option.value}
                             />
                             <Label htmlFor={option.value}>
